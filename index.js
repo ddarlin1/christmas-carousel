@@ -44,13 +44,35 @@ function nextImg() {
 }
 
 function getImg() {
-    img.src = imgs[imgNum].src
-    img.alt = imgs[imgNum].alt
-    img({
-        navigation: true,
-        singleItem: true,
-        transitionStyle: "fade"
-    });
+    img.src = imgs[imgNum].src;
+    img.alt = imgs[imgNum].alt;
 }
 
 getImg();
+
+// Stretch goals:
+// - Allow the user to zoom in and out of the images.
+
+let imgHeight = 300;
+document.getElementById('plus').addEventListener('click', function() {
+    if (imgHeight <= 400) {
+        imgHeight += 20
+        img.style.height = `${imgHeight}px`
+    
+    }
+})
+document.getElementById('minus').addEventListener('click', function() {
+    if (imgHeight > 300) {
+        imgHeight -= 20
+        img.style.height = `${imgHeight}px`
+    }
+})
+
+
+// Background Photo on <a href="https://photostockeditor.com/image/light-orange-and-white-bokeh-lights-bokeh-187037">Photostockeditor</a>
+// Village photo by <a href="https://unsplash.com/@rpnickson">Roberto Nickson</a> on <a href="https://unsplash.com/s/photos/christmas">Unsplash</a> 
+// Present photo by <a href="https://unsplash.com/@freestocks">freestocks</a> on <a href="https://unsplash.com/s/photos/christmas?">Unsplash</a>
+// Cute doggies photo  by <a href="https://unsplash.com/@lbsnipes">Laura Beth Snipes</a> on <a href="https://unsplash.com/s/photos/christmas">Unsplash</a> 
+// Christmas tree photo on <a href="https://photostockeditor.com/image/chatham-closeup-photo-of-gold-glittered-christmas-bauble-kent-187156">Photostockeditor</a> 
+// Hot cocoa photo on <a href="https://photostockeditor.com/image/snow-winter-cup-hot-chocolate-heart-183990">Photostockeditor</a>
+// Gingerbread photo on <a href="https://photostockeditor.com/image/brown-baking-biscuit-christmas-cookie-184071">Photostockeditor</a>
